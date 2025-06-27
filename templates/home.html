@@ -1,0 +1,69 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Brain Tumor Prediction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .home-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      animation: slide-in 1.2s ease;
+    }
+    @keyframes slide-in {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .home-card h1 {
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .home-card p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #e0e0e0;
+    }
+    .btn-custom {
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 25px;
+      margin: 10px;
+      width: 220px;
+      transition: all 0.3s ease;
+    }
+    .btn-custom:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="home-card">
+    <h1>AI Brain Tumor Prediction</h1>
+    <p>Utilize cutting-edge deep learning models to analyze MRI images or clinical data and detect tumor types accurately.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary btn-custom">🔬 MRI Image Prediction</a>
+    <a href="{{ url_for('clinical') }}" class="btn btn-success btn-custom">🧬 Clinical Data Prediction</a>
+  </div>
+</body>
+</html>
